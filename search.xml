@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Tool</title>
-    <url>/2019/11/19/Tool/</url>
-    <content><![CDATA[<h1 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h1><p>[Grammar]（<a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">https://www.jianshu.com/p/191d1e21f7ed</a> ）</p>
+    <title>Shortest path problem</title>
+    <url>/2020/06/23/Shortest%20path%20problem/</url>
+    <content><![CDATA[<h1 id="Single-Agent"><a href="#Single-Agent" class="headerlink" title="Single Agent"></a>Single Agent</h1><ul>
+<li><p>Single source</p>
+<ul>
+<li><p>Dijkstra<br><a href="https://github.com/iiiIgnorance/UESTC-Navigation/blob/master/README.md" target="_blank" rel="noopener">UESTC-Navigation</a></p>
+</li>
+<li><p>Bellman-Ford</p>
+</li>
+<li><p>SPFA</p>
+</li>
+</ul>
+</li>
+<li><p>Multi-Source</p>
+<ul>
+<li><p>Floyd</p>
+</li>
+<li><p>A-star<br><a href="https://blog.csdn.net/hitwhylz/article/details/23089415" target="_blank" rel="noopener">Introduce</a><br><a href="https://github.com/lnp1993/Astar" target="_blank" rel="noopener">Code</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Multi-Agent"><a href="#Multi-Agent" class="headerlink" title="Multi-Agent"></a>Multi-Agent</h1><p><a href="http://mapf.info/index.php/Main/Benchmarks" target="_blank" rel="noopener">MAPF</a></p>
 ]]></content>
+      <categories>
+        <category>arithmetic</category>
+      </categories>
+      <tags>
+        <tag>arithmetic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tool</title>
+    <url>/2020/06/20/Tool/</url>
+    <content><![CDATA[<h1 id="Markdown"><a href="#Markdown" class="headerlink" title="Markdown"></a>Markdown</h1><p><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="noopener">Grammar</a></p>
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><p><a href="https://blog.csdn.net/tianzongnihao/article/details/80539264?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522159289918919725247607664%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=159289918919725247607664&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-80539264.first_rank_ecpm_v3_pc_rank_v3&utm_term=linux%E5%91%BD%E4%BB%A4" target="_blank" rel="noopener">Grammar</a></p>
+<h1 id="Assembly"><a href="#Assembly" class="headerlink" title="Assembly"></a>Assembly</h1><p><a href="https://zhuanlan.zhihu.com/c_144694924" target="_blank" rel="noopener">QuickStarts</a></p>
+]]></content>
+      <categories>
+        <category>tool</category>
+      </categories>
+      <tags>
+        <tag>tool</tag>
+      </tags>
   </entry>
   <entry>
     <title>Discrete Optimization</title>
-    <url>/2019/11/19/Discrete%20Optimization/</url>
+    <url>/2020/06/20/Discrete%20Optimization/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>arithmetic</category>
@@ -19,7 +59,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/2019/11/18/hello-world/</url>
+    <url>/2020/06/20/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <a id="more"></a>
 
