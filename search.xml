@@ -23,8 +23,34 @@
 </ul>
 </li>
 </ul>
-<h1 id="Multi-Agent"><a href="#Multi-Agent" class="headerlink" title="Multi-Agent"></a>Multi-Agent</h1><p><a href="http://mapf.info/index.php/Main/Benchmarks" target="_blank" rel="noopener">MAPF</a></p>
-]]></content>
+<h1 id="Multi-Agent"><a href="#Multi-Agent" class="headerlink" title="Multi-Agent"></a>Multi-Agent</h1><h2 id="MAPF"><a href="#MAPF" class="headerlink" title="MAPF"></a><a href="http://mapf.info/index.php/Main/Benchmarks" target="_blank" rel="noopener">MAPF</a></h2><hr>
+<p><em>Improved Heuristics for Multi-Agent Path Finding with Conflict-Based Search</em><br><a href="https://github.com/Jiaoyang-Li/CBSH2/blob/master/2019-IJCAI.pdf" target="_blank" rel="noopener">2019-IJCAI</a></p>
+<h3 id="0-Abstract"><a href="#0-Abstract" class="headerlink" title="0. Abstract"></a>0. Abstract</h3><pre><code>Two new admissible heuristics</code></pre><h3 id="1-Introduction"><a href="#1-Introduction" class="headerlink" title="1. Introduction"></a>1. Introduction</h3><pre><code>Optimal MAPF algorithms in recent years
+CBS theory and application
+CG(current solution);DG,WDG(future solutions)</code></pre><h3 id="2-Background"><a href="#2-Background" class="headerlink" title="2. Background"></a>2. Background</h3><h4 id="2-1-Problem-Definition"><a href="#2-1-Problem-Definition" class="headerlink" title="2.1 Problem Definition"></a>2.1 Problem Definition</h4><pre><code>MAPF problem definition and goal</code></pre><h4 id="2-2-CBS"><a href="#2-2-CBS" class="headerlink" title="2.2 CBS"></a>2.2 CBS</h4><pre><code>Two levels
+High level:constraint tree(N.constraints,N.solution,N.cost)
+Check conflict in solution:
+    1.none,return;
+    2.otherwise,split N into two child node with constraint and low level find path,if no solution the node will be pruned</code></pre><h4 id="2-3-ICBS"><a href="#2-3-ICBS" class="headerlink" title="2.3 ICBS"></a>2.3 ICBS</h4><pre><code>Choice rule:
+    1.cardinal(child nodes cost both larger than father);
+    2.semi-cardinal(one child node);
+    3.non-cardinal(none)
+MDD classify conflicts:
+    1.cardinal:both only way at level t;
+    2.semin-cardinal:only one;
+    3.cardinal:none</code></pre><h4 id="2-4-CBSH-CG"><a href="#2-4-CBSH-CG" class="headerlink" title="2.4 CBSH(CG)"></a>2.4 CBSH(CG)</h4><pre><code>Speed up the high level search:
+    1.one cardinal:n+1;
+    2.multiple cardinal:build graph,one agent(in its edges) in cardinal conflict increase at least 1</code></pre><h3 id="3-Limitation-of-CG-Heuristic"><a href="#3-Limitation-of-CG-Heuristic" class="headerlink" title="3. Limitation of CG Heuristic"></a>3. Limitation of CG Heuristic</h3><pre><code>Only cna find an h-value of at most 1
+Only in N solution(current solution)</code></pre><h3 id="4-The-DG-Heuristic"><a href="#4-The-DG-Heuristic" class="headerlink" title="4. The DG Heuristic"></a>4. The DG Heuristic</h3><h4 id="4-1-4-2-Pairwise-Dpendency-Graph-G-D"><a href="#4-1-4-2-Pairwise-Dpendency-Graph-G-D" class="headerlink" title="4.1,4.2 Pairwise Dpendency Graph G(D)"></a>4.1,4.2 Pairwise Dpendency Graph G(D)</h4><pre><code>Consider future solutions
+Construct G(D):
+    1.three categories:
+        a.no conflict:independent;
+        b.one cardinal:dependent;
+        c.semi-cardinal or non-cardinal:merge MDD to decide
+    2.G(D)=(V(D),E(D);each agent a(i) induces a vertes v(i)∈V（D);an adge(v(i),v(j))∈E(D) if a(i) and a(j) are dependent.
+    3.the cost of path of at least one agent has to incease by at least 1</code></pre><h4 id="4-3-Merging-the-MDDs"><a href="#4-3-Merging-the-MDDs" class="headerlink" title="4.3 Merging the MDDs"></a>4.3 Merging the MDDs</h4><pre><code>The goint MDD is build level by level,it starts at the joing state(s(i),s(j)) at level 0.Suppose that we already have a joint state(v(i),v(j)) at level t and want to add its child nodes at level t+1.Each pair in the cross product of the child nodes of v(i) at level t in the MDD for a(i) and the child nodes of v(j) at level t in the MDD for a(j) shoule be examined.Only conflict-free pairs are added.If it does not contain state(g(i),g(j)),a(i) and a(j) are dependent.</code></pre><h3 id="5-The-WDG-Heuristic"><a href="#5-The-WDG-Heuristic" class="headerlink" title="5. The WDG Heuristic"></a>5. The WDG Heuristic</h3><pre><code>WDG captures both the pairwise dependencies between between agents and the extra cost that each pair of denpendent agents will contribute to the total cost.</code></pre><h4 id="5-1-5-2-Weighted-Pairwise-Dependency-Graph-G-WD"><a href="#5-1-5-2-Weighted-Pairwise-Dependency-Graph-G-WD" class="headerlink" title="5.1,5.2 Weighted Pairwise Dependency Graph G(WD)"></a>5.1,5.2 Weighted Pairwise Dependency Graph G(WD)</h4><pre><code>It uses the same vertices and edges as G(D).
+The Weight on each edge(v(i),v(j))∈E（D） equals ▲(ij) at N.</code></pre><h4 id="5-3-The-Two-Agent-Problem"><a href="#5-3-The-Two-Agent-Problem" class="headerlink" title="5.3 The Two-Agent Problem"></a>5.3 The Two-Agent Problem</h4><pre><code>As CBSH searches in a best-first manner,it has to expand all CT nodes of cost 8.However,if the h-value of the root CT node is 1,with a good tie-breaking rule(such as depth-first),CBSH can quickly generate a CT node of cost 9 with an optimal solution and return this solution immediately.</code></pre><h3 id="Runtime-Reduction-Techniques"><a href="#Runtime-Reduction-Techniques" class="headerlink" title="Runtime Reduction Techniques"></a>Runtime Reduction Techniques</h3><pre><code>Lazy Computation of Heuristics:It first computes a cheaper but less informed h-value h1(N)(or even uses zero) and inserts N into OPEN.Only when N emerges from OPEN,it computes h2(N) for it and re-inserts it into OPENS
+Memoization:Use memoization to store the results of merging the MDDs and solving the two-agent problems.The inputs are the indices of two agent and the set of constraints imposed on them.The output is theexistence of the corresponding edge and its weight.</code></pre>]]></content>
       <categories>
         <category>arithmetic</category>
       </categories>
